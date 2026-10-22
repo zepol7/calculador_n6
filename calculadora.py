@@ -17,6 +17,10 @@ def multiplicar(a, b):
 
 
 
+def dividir(a, b):
+    """Retorna el cociente de a dividido b."""
+    return a / b
+
 
 
 def mostrar_menu():
@@ -51,8 +55,8 @@ def main():
             print(f"Resultado: {restar(a, b)}")
         elif opcion == "3":
            print(f"Resultado: {multiplicar(a, b)}")
-        #elif opcion == "4":
-           # print(f"Resultado: {dividir(a, b)}")
+        elif opcion == "4":
+           print(f"Resultado: {dividir(a, b)}")
 
 
 if __name__ == "__main__":
