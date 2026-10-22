@@ -10,6 +10,15 @@ def restar(a, b):
     return a - b
 
 
+
+def multiplicar(a, b):
+    """Retorna el producto de a y b."""
+    return a * b
+
+
+
+
+
 def mostrar_menu():
     print("=== CALCULADORA BÁSICA ===")
     print("1. Sumar")
@@ -40,8 +49,8 @@ def main():
             print(f"Resultado: {sumar(a, b)}")
         elif opcion == "2":
             print(f"Resultado: {restar(a, b)}")
-        #elif opcion == "3":
-           # print(f"Resultado: {multiplicar(a, b)}")
+        elif opcion == "3":
+           print(f"Resultado: {multiplicar(a, b)}")
         #elif opcion == "4":
            # print(f"Resultado: {dividir(a, b)}")
 
