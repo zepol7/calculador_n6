@@ -16,7 +16,22 @@ def multiplicar(a, b):
 
 
 def dividir(a, b):
-    """Retorna el cociente de a dividido b."""
+    """
+    Divide a entre b con validación robusta de errores.
+    
+    Raises:
+        TypeError: si los argumentos no son numéricos
+        ZeroDivisionError: si b es cero, con mensaje descriptivo
+    """
+    if not isinstance(a, (int, float)):
+        raise TypeError(f"El primer argumento debe ser numérico, recibido: {type(a)}")
+    if not isinstance(b, (int, float)):
+        raise TypeError(f"El segundo argumento debe ser numérico, recibido: {type(b)}")
+    if b == 0:
+        raise ZeroDivisionError(
+            f"Error: no se puede dividir {a} entre cero. "
+            "La división por cero no está definida matemáticamente."
+        )
     return a / b
 
 def potencia(base, exponente):
