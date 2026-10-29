@@ -17,21 +17,26 @@ def multiplicar(a, b):
 
 def dividir(a, b):
     """
-    Divide a entre b con validación robusta de errores.
+    Divide a entre b con soporte para números complejos.
     
-    Raises:
-        TypeError: si los argumentos no son numéricos
-        ZeroDivisionError: si b es cero, con mensaje descriptivo
+    Soporta:
+    - Números enteros
+    - Números flotantes
+    - Números complejos (complex)
+    
+    Returns:
+        El cociente a / b
     """
-    if not isinstance(a, (int, float)):
-        raise TypeError(f"El primer argumento debe ser numérico, recibido: {type(a)}")
-    if not isinstance(b, (int, float)):
-        raise TypeError(f"El segundo argumento debe ser numérico, recibido: {type(b)}")
+    tipos_soportados = (int, float, complex)
+    if not isinstance(a, tipos_soportados):
+        raise TypeError(f"Tipo no soportado para dividendo: {type(a)}")
+    if not isinstance(b, tipos_soportados):
+        raise TypeError(f"Tipo no soportado para divisor: {type(b)}")
+    
+    # Para números complejos, b == 0 es b == 0+0j
     if b == 0:
-        raise ZeroDivisionError(
-            f"Error: no se puede dividir {a} entre cero. "
-            "La división por cero no está definida matemáticamente."
-        )
+        raise ZeroDivisionError("División por cero no permitida")
+    
     return a / b
 
 def potencia(base, exponente):
