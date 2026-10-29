@@ -10,18 +10,35 @@ def restar(a, b):
     return a - b
 
 
-
 def multiplicar(a, b):
     """Retorna el producto de a y b."""
     return a * b
-
 
 
 def dividir(a, b):
     """Retorna el cociente de a dividido b."""
     return a / b
 
+def potencia(base, exponente):
+    """
+    Calcula base elevado a exponente.
+    Maneja exponentes negativos retornando el inverso.
+    """
+    if exponente == 0:
+        return 1
+    elif exponente < 0:
+        return 1 / (base ** abs(exponente))
+    else:
+        return base ** exponente
 
+def raiz_cuadrada(numero):
+    """
+    Calcula la raíz cuadrada de un número.
+    Lanza ValueError si el número es negativo.
+    """
+    if numero < 0:
+        raise ValueError(f"No se puede calcular raíz cuadrada de {numero}")
+    return numero ** 0.5
 
 def mostrar_menu():
     print("=== CALCULADORA BÁSICA ===")
