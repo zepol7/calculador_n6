@@ -16,7 +16,27 @@ def multiplicar(a, b):
 
 
 def dividir(a, b):
-    """Retorna el cociente de a dividido b."""
+    """
+    Divide a entre b con soporte para números complejos.
+    
+    Soporta:
+    - Números enteros
+    - Números flotantes
+    - Números complejos (complex)
+    
+    Returns:
+        El cociente a / b
+    """
+    tipos_soportados = (int, float, complex)
+    if not isinstance(a, tipos_soportados):
+        raise TypeError(f"Tipo no soportado para dividendo: {type(a)}")
+    if not isinstance(b, tipos_soportados):
+        raise TypeError(f"Tipo no soportado para divisor: {type(b)}")
+    
+    # Para números complejos, b == 0 es b == 0+0j
+    if b == 0:
+        raise ZeroDivisionError("División por cero no permitida")
+    
     return a / b
 
 def potencia(base, exponente):
